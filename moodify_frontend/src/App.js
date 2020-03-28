@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Record from './components/Record';
 import * as Scroll from 'react-scroll';
 import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import MicRecorder from 'mic-recorder-to-mp3';
 
 import './App.css';
 

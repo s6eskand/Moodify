@@ -1,6 +1,5 @@
 import React from 'react';
 import code from './images/—Pngtree—vector code optimization icon_4141289.png'
-import {Link} from 'react-scroll';
 
 class Intro extends React.Component {
     render() {
