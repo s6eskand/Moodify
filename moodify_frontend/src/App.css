@@ -18,10 +18,12 @@ h1 {
 a {
   text-decoration: none;
   color: #595959;
-  transition: 0.25s
+  transition: 0.25s;
+  cursor: pointer;
 }
 
 a:hover {
   color: lightslategray;
   transition: 0.25s
 }
+
