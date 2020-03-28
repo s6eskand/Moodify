@@ -35,7 +35,7 @@ class Intro extends React.Component {
 const introStyle = {
     color: '#595959',
     textAlign: 'center',
-    marginTop: '50px'
+    padding: '50px'
 };
 
 const imgStyle = {
@@ -46,7 +46,7 @@ const imgStyle = {
 const headerStyle = {
     color: '#595959',
     textAlign: 'center',
-    padding: '20px',
+    padding: '50px',
 };
 
 export default Intro;

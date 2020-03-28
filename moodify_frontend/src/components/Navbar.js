@@ -12,7 +12,7 @@ class Navbar extends React.Component {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <Link className="nav-item nav-link active" to="#">Get Started
+                        <Link className="nav-item nav-link active" to="record" smooth={true} duration={1500}>Get Started
                             <span className="sr-only">(current)</span></Link>
                         <Link className="nav-item nav-link" to="#" smooth={true} duration={1500}>Features</Link>
                         <Link className="nav-item nav-link" to="#" smooth={true} duration={1500}>Contact</Link>

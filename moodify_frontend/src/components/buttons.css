@@ -1,0 +1,29 @@
+.btnStart {
+    border-radius: 40px;
+    padding: 4px 12px;
+    color: #595959;
+    margin-right: 100px;
+    transition: 0.5s;
+}
+
+.btnStop {
+    border-radius: 40px;
+    padding: 4px 12px;
+    color: #595959;
+    margin-left: 100px;
+    transition: 0.5s;
+}
+
+.btnStart:hover {
+    background-color: #4DA34D;
+    transform: scale(1.25);
+    transition: 0.5s;
+    color: #303030;
+}
+
+.btnStop:hover {
+    background-color: #B13939;
+    transform: scale(1.25);
+    transition: 0.5s;
+    color: #303030;
+}

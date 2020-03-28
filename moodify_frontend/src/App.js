@@ -2,7 +2,8 @@ import React from 'react';
 import Header from './components/layout/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Intro from './components/Intro';
-import Navbar from "./components/Navbar";
+import Navbar from './components/Navbar';
+import Record from './components/Record';
 import * as Scroll from 'react-scroll';
 import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
@@ -14,6 +15,7 @@ class App extends React.Component{
             <div className="App">
                 <Navbar/>
                 <Intro/>
+                <Record/>
             </div>
         );
     }
