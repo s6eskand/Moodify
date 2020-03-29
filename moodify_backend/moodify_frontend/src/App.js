@@ -16,7 +16,7 @@ class App extends React.Component{
             <div className="App">
                 <Navbar/>
                 <Intro/>
-                <Record/>
+                <Record requestType="post" />
             </div>
         );
     }

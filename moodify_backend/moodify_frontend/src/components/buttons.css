@@ -29,3 +29,20 @@
     color: #303030;
     cursor: pointer;
 }
+
+.btnGenerate {
+    border-radius: 40px;
+    padding: 12px 36px;
+    color: #595959;
+    transition: 0.5s;
+    font-size: 1.25rem;
+}
+
+.btnGenerate:hover {
+    background-color: #21CABB;
+    transform: scale(1.25);
+    transition: 0.5s;
+    color: #303030;
+    cursor: pointer;
+}
+

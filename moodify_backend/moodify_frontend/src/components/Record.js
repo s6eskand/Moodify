@@ -1,6 +1,7 @@
 import React from 'react';
 import './buttons.css';
 import MicRecorder from 'mic-recorder-to-mp3';
+import axios from 'axios';
 
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 
@@ -12,6 +13,7 @@ class Record extends React.Component {
             isRecording: false,
             blobURL: '',
             isBlocked: false,
+            data: {}
         };
     }
 
@@ -32,7 +34,7 @@ class Record extends React.Component {
             .stop()
             .getMp3()
             .then(([buffer, blob]) => {
-                const blobURL = URL.createObjectURL(blob)
+                const blobURL = URL.createObjectURL(blob);
                 this.setState({ blobURL, isRecording: false });
             }).catch((e) => console.log(e));
     };
@@ -49,6 +51,23 @@ class Record extends React.Component {
             },
         );
     }
+
+    handleFormSubmit = async (e, requestType) => {
+        e.preventDefault();
+        const user = e.target.elements.user.value;
+        const url = this.state.blobURL;
+
+        if (requestType === 'post') {
+            return axios.post('http://127.0.0.1:8000/api/create/', {
+                username: user,
+                audio_url: url,
+                spotify_link: 'none'
+            })
+                .then(res => console.log(res))
+                .catch(error => console.error(error))
+        }
+
+    };
 
     render() {
         return (
@@ -70,6 +89,21 @@ class Record extends React.Component {
                 <div style={child} id="record" className="row">
                     <div className="col-12">
                         <audio src={this.state.blobURL} id="vid2" controls="controls"/>
+                    </div>
+                </div>
+                <div style={child} id="record" className="row">
+                    <div className="col-12">
+                        <form onSubmit={(e) => this.handleFormSubmit(
+                            e,
+                            this.props.requestType
+                        )}>
+                            <div className="form-group">
+                                <input name="user" style={
+                                    {backgroundColor: '#595959', borderColor: '#595959', color: '#fff', borderRadius: '20px', marginBottom: '50px'}
+                                } placeholder="Enter your spotify username" type="text" className="form-control" id="exampleInputPassword1"/>
+                            </div>
+                            <button htmlType="submit" className="btnGenerate">Generate Playlist</button>
+                        </form>
                     </div>
                 </div>
             </div>
